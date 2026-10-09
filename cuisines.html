@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Indian Food</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f2f0ee;
+      color: #111;
+    }
+
+    .container {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 24px 18px 40px;
+    }
+
+    header {
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.3rem;
+      line-height: 1.2;
+      font-weight: 700;
+    }
+
+    .intro {
+      margin: 16px 0 18px;
+      font-size: 15px;
+      line-height: 1.55;
+      color: #2e2e2e;
+      max-width: 1000px;
+    }
+
+    nav {
+      margin: 16px 0 18px;
+    }
+
+    nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav a {
+      color: #111;
+      text-decoration: none;
+      font-size: 0.98rem;
+      border-bottom: 1px solid #111;
+      font-weight: 400;
+    }
+
+    nav a:hover {
+      opacity: 0.7;
+    }
+
+    article {
+      margin-top: 18px;
+    }
+
+    section {
+      margin: 26px 0 34px;
+      padding-top: 2px;
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #111;
+    }
+
+    .dish {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+    }
+
+    .dish img {
+      width: 260px;
+      height: 170px;
+      object-fit: cover;
+      border: 1px solid #d9d9d9;
+      background: #ddd;
+      flex-shrink: 0;
+      display: block;
+    }
+
+    .dish p {
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #1e1e1e;
+    }
+
+    .dish p + p {
+      margin-top: 8px;
+    }
+
+    footer {
+      margin-top: 30px;
+      border-top: 1px solid #d7d7d7;
+      padding-top: 10px;
+      font-size: 0.95rem;
+      color: #363636;
+    }
+
+    @media (max-width: 720px) {
+      .dish {
+        flex-direction: column;
+      }
+
+      .dish img {
+        width: 100%;
+        max-width: 420px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Indian Food</h1>
+      <p class="intro">
+        The traditional food of India has been widely appreciated for its richness of flavors and diversity. It is a mix of different cuisines from all over the world and is one of the most popular cuisines in the world. Indian food is known for its variety of ingredients, vibrant colors, and aromatic spices. The cuisine varies from region to region, offering a wide range of textures and flavors that make it unique and unforgettable.
+      </p>
+    </header>
+
+    <nav aria-label="Cuisine navigation">
+      <ul>
+        <li><a href="#bengali">Bengali Food</a></li>
+        <li><a href="#gujarati">Gujarati Food</a></li>
+        <li><a href="#mughlai">Mughlai Food</a></li>
+        <li><a href="#punjabi">Punjabi Food</a></li>
+        <li><a href="#south-indian">South Indian Cuisine</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section id="bengali">
+        <h2>Bengali Food</h2>
+        <div class="dish">
+          <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=900&q=80" alt="Bengali food platter" />
+          <div>
+            <p>
+              Bengali cuisine is appreciated for its subtle flavors, use of mustard, and rich seafood dishes. Traditional Bengali meals often combine rice, lentils, vegetables, and a variety of fish and meat preparations. The cuisine is known for its balance of spices, freshness, and comforting taste.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="gujarati">
+        <h2>Gujarati Food</h2>
+        <div class="dish">
+          <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80" alt="Gujarati food" />
+          <div>
+            <p>
+              Gujarati food is primarily vegetarian and is known for its sweet and savory balance. The cuisine is famous for its use of fresh vegetables, grains, and variety of lentils. Gujarati meals are often light yet satisfying, with a focus on freshness and healthy ingredients.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="mughlai">
+        <h2>Mughlai Food</h2>
+        <div class="dish">
+          <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=80" alt="Mughlai food dish" />
+          <div>
+            <p>
+              Mughlai cuisine is one of the richest cuisines in India, with origins in the royal kitchens of the Mughal Empire. It features creamy gravies, nuts, raisins, and fragrant spices, creating a luxurious and indulgent flavor profile. Popular dishes include biryani, kebabs, and rich curries.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="punjabi">
+        <h2>Punjabi Food</h2>
+        <div class="dish">
+          <img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=900&q=80" alt="Punjabi food platter" />
+          <div>
+            <p>
+              Punjabi cuisine is known for its hearty and flavorful dishes, often made with rich sauces, butter, and aromatic spices. It includes classic dishes like dal makhani, paneer tikka, butter chicken, and tandoori breads. The cuisine is loved for its indulgent taste and generous portions.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="south-indian">
+        <h2>South Indian Cuisine</h2>
+        <div class="dish">
+          <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=900&q=80" alt="South Indian food" />
+          <div>
+            <p>
+              South Indian cuisine includes dishes such as dosa, idli, sambar, and coconut-based curries. It is known for its use of rice, lentils, and fresh ingredients, with many dishes being light, nutritious, and flavorful. The cuisine is celebrated for its balance of taste, texture, and health benefits.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Author: Food Blog Writer &nbsp;|&nbsp; Date: October 9, 2026</p>
+    </footer>
+  </div>
+</body>
+</html>
