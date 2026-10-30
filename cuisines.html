@@ -3,216 +3,359 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Indian Food</title>
+  <title>Indian Cuisines</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700&display=swap');
+
     * {
       box-sizing: border-box;
     }
 
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f2f0ee;
-      color: #111;
+      background: #efeee9;
+      font-family: 'Inter', Arial, sans-serif;
+      color: #1b1b1b;
     }
 
-    .container {
-      max-width: 1040px;
+    .page {
+      width: min(860px, calc(100% - 24px));
       margin: 0 auto;
-      padding: 24px 18px 40px;
+      padding: 8px 0 28px;
     }
 
-    header {
-      margin-bottom: 14px;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: 2.3rem;
-      line-height: 1.2;
+    .title {
+      text-align: center;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 2.1rem;
       font-weight: 700;
-    }
-
-    .intro {
-      margin: 16px 0 18px;
-      font-size: 15px;
-      line-height: 1.55;
-      color: #2e2e2e;
-      max-width: 1000px;
-    }
-
-    nav {
-      margin: 16px 0 18px;
-    }
-
-    nav ul {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px 18px;
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    nav a {
-      color: #111;
-      text-decoration: none;
-      font-size: 0.98rem;
-      border-bottom: 1px solid #111;
-      font-weight: 400;
-    }
-
-    nav a:hover {
-      opacity: 0.7;
-    }
-
-    article {
-      margin-top: 18px;
-    }
-
-    section {
-      margin: 26px 0 34px;
-      padding-top: 2px;
-    }
-
-    h2 {
+      font-style: italic;
+      color: #374d68;
+      letter-spacing: 0.02em;
       margin: 0 0 14px;
+      padding-top: 6px;
+    }
+
+    .hero {
+      position: relative;
+      height: 270px;
+      border: 1px solid #c9c2b8;
+      overflow: hidden;
+      background: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+      box-shadow: inset 0 0 0 9999px rgba(236, 232, 223, 0.3);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.06), rgba(0,0,0,0.12));
+    }
+
+    .hero-copy {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: min(88%, 520px);
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(2px);
+      color: #f3f0ea;
+      text-align: center;
+      padding: 10px 20px;
+      border: 1px solid rgba(255,255,255,0.28);
+      box-shadow: 0 0 0 1px rgba(0,0,0,0.08);
+      z-index: 1;
+      font-size: 0.8rem;
+      line-height: 1.5;
+    }
+
+    .hero-copy p {
+      margin: 0;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.32);
+    }
+
+    .nav-bar {
+      display: flex;
+      justify-content: center;
+      background: #d9d1bd;
+      border: 1px solid #c9c2b8;
+      border-top: none;
+      overflow: hidden;
+    }
+
+    .nav-bar a {
+      flex: 1;
+      text-align: center;
+      color: #2c2f36;
+      text-decoration: none;
+      font-size: 0.74rem;
+      letter-spacing: 0.04em;
+      font-weight: 600;
+      padding: 14px 8px;
+      border-right: 1px solid rgba(74, 62, 49, 0.38);
+      background: rgba(255,255,255,0.04);
+      text-transform: uppercase;
+    }
+
+    .nav-bar a:last-child {
+      border-right: none;
+    }
+
+    .content {
+      display: flex;
+      gap: 18px;
+      margin-top: 18px;
+      align-items: flex-start;
+    }
+
+    .left-col {
+      flex: 1 1 65%;
+    }
+
+    .right-col {
+      flex: 0 0 30%;
+      background: #e5e1df;
+      border: 1px solid #c9c2b8;
+      padding: 8px 16px 14px;
+      min-height: 100%;
+    }
+
+    .food-card {
+      position: relative;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid #c9c2b8;
+      margin-bottom: 14px;
+      overflow: hidden;
+    }
+
+    .food-card > h3 {
+      margin: 0;
+      padding: 10px 16px;
+      background: #ecd98a;
       font-size: 1.05rem;
       font-weight: 700;
-      color: #111;
+      color: #2b2b2b;
+      text-align: left;
+      border-bottom: 1px solid #c9c2b8;
     }
 
-    .dish {
+    .food-card-inner {
       display: flex;
-      align-items: flex-start;
-      gap: 18px;
+      gap: 16px;
+      padding: 12px 15px 14px;
+      background: #f1efe8;
+      align-items: center;
     }
 
-    .dish img {
-      width: 260px;
-      height: 170px;
+    .food-card img {
+      width: 170px;
+      height: 110px;
       object-fit: cover;
-      border: 1px solid #d9d9d9;
-      background: #ddd;
+      border: 1px solid #c8c4bd;
       flex-shrink: 0;
       display: block;
     }
 
-    .dish p {
+    .food-card p {
       margin: 0;
-      font-size: 1rem;
-      line-height: 1.6;
-      color: #1e1e1e;
+      font-size: 0.8rem;
+      line-height: 1.5;
+      color: #2a2a2a;
     }
 
-    .dish p + p {
-      margin-top: 8px;
+    .right-col h4 {
+      margin: 6px 0 10px;
+      font-size: 1.02rem;
+      color: #2f2f2f;
+      text-align: left;
+      font-weight: 700;
     }
 
-    footer {
-      margin-top: 30px;
-      border-top: 1px solid #d7d7d7;
-      padding-top: 10px;
-      font-size: 0.95rem;
-      color: #363636;
+    .right-col .group {
+      margin-bottom: 10px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(106, 94, 81, 0.18);
     }
 
-    @media (max-width: 720px) {
-      .dish {
+    .right-col .group:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+
+    .right-col h5 {
+      margin: 0 0 6px;
+      font-size: 0.83rem;
+      color: #2d2d2d;
+      text-transform: capitalize;
+      font-weight: 700;
+      padding-top: 1px;
+    }
+
+    .right-col ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .right-col li {
+      position: relative;
+      padding-left: 12px;
+      margin: 4px 0;
+      font-size: 0.8rem;
+      color: #2f3033;
+      line-height: 1.35;
+    }
+
+    .right-col li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #4a5867;
+    }
+
+    @media (max-width: 760px) {
+      .content {
         flex-direction: column;
       }
 
-      .dish img {
+      .right-col {
         width: 100%;
-        max-width: 420px;
+        flex-basis: auto;
+      }
+
+      .food-card-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .food-card img {
+        width: 100%;
+        max-width: 240px;
+      }
+
+      .nav-bar {
+        flex-wrap: wrap;
+      }
+
+      .nav-bar a {
+        width: 50%;
+        border-right: 1px solid rgba(74, 62, 49, 0.38);
+        border-bottom: 1px solid rgba(74, 62, 49, 0.38);
       }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>Indian Food</h1>
-      <p class="intro">
-        The traditional food of India has been widely appreciated for its richness of flavors and diversity. It is a mix of different cuisines from all over the world and is one of the most popular cuisines in the world. Indian food is known for its variety of ingredients, vibrant colors, and aromatic spices. The cuisine varies from region to region, offering a wide range of textures and flavors that make it unique and unforgettable.
-      </p>
-    </header>
+  <div class="page">
+    <h1 class="title">Indian Cuisines</h1>
 
-    <nav aria-label="Cuisine navigation">
-      <ul>
-        <li><a href="#bengali">Bengali Food</a></li>
-        <li><a href="#gujarati">Gujarati Food</a></li>
-        <li><a href="#mughlai">Mughlai Food</a></li>
-        <li><a href="#punjabi">Punjabi Food</a></li>
-        <li><a href="#south-indian">South Indian Cuisine</a></li>
-      </ul>
+    <div class="hero" aria-label="Indian food ingredients banner">
+      <div class="hero-copy">
+        <p>
+          The Indian food is known for its use of lots of spices, herbs, vegetables, and dairy products.
+          It is a rich cuisine that combines the flavors of many regions and brings together a delightful mix of textures and aromas.
+        </p>
+      </div>
+    </div>
+
+    <nav class="nav-bar" aria-label="Cuisine navigation">
+      <a href="#bengali">Bengali</a>
+      <a href="#gujarati">Gujarati</a>
+      <a href="#mughlai">Mughlai</a>
+      <a href="#punjabi">Punjabi</a>
+      <a href="#south-indian">South Indian</a>
     </nav>
 
-    <main>
-      <section id="bengali">
-        <h2>Bengali Food</h2>
-        <div class="dish">
-          <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=900&q=80" alt="Bengali food platter" />
-          <div>
+    <div class="content">
+      <main class="left-col">
+        <article class="food-card" id="bengali">
+          <h3>Bengali Food</h3>
+          <div class="food-card-inner">
+            <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=900&q=80" alt="Bengali food" />
             <p>
-              Bengali cuisine is appreciated for its subtle flavors, use of mustard, and rich seafood dishes. Traditional Bengali meals often combine rice, lentils, vegetables, and a variety of fish and meat preparations. The cuisine is known for its balance of spices, freshness, and comforting taste.
+              Bengali food is a mixture of rice, fish, lentils, and a variety of vegetables, often characterized by its use of mustard, poppy seeds, and fresh herbs. The cuisine is known for its light, aromatic, and flavorful dishes that are both nutritious and comforting.
             </p>
           </div>
-        </div>
-      </section>
+        </article>
 
-      <section id="gujarati">
-        <h2>Gujarati Food</h2>
-        <div class="dish">
-          <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80" alt="Gujarati food" />
-          <div>
+        <article class="food-card" id="gujarati">
+          <h3>Gujarati Food</h3>
+          <div class="food-card-inner">
+            <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80" alt="Gujarati food" />
             <p>
-              Gujarati food is primarily vegetarian and is known for its sweet and savory balance. The cuisine is famous for its use of fresh vegetables, grains, and variety of lentils. Gujarati meals are often light yet satisfying, with a focus on freshness and healthy ingredients.
+              Gujarati food is known for its sweetness, balance, and the use of fresh vegetables, lentils, and yogurt. The cuisine is light yet flavorful, often including a mix of savory and sweet dishes that create a unique and satisfying meal.
             </p>
           </div>
-        </div>
-      </section>
+        </article>
 
-      <section id="mughlai">
-        <h2>Mughlai Food</h2>
-        <div class="dish">
-          <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=80" alt="Mughlai food dish" />
-          <div>
+        <article class="food-card" id="mughlai">
+          <h3>Mughlai Food</h3>
+          <div class="food-card-inner">
+            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=80" alt="Mughlai food" />
             <p>
-              Mughlai cuisine is one of the richest cuisines in India, with origins in the royal kitchens of the Mughal Empire. It features creamy gravies, nuts, raisins, and fragrant spices, creating a luxurious and indulgent flavor profile. Popular dishes include biryani, kebabs, and rich curries.
+              Mughlai cuisine is one of the richest in India, influenced by Persian cooking and royal Mughal traditions. It features creamy gravies, fragrant spices, rich meat dishes, and a generous use of nuts, saffron, and dairy.
             </p>
           </div>
-        </div>
-      </section>
+        </article>
 
-      <section id="punjabi">
-        <h2>Punjabi Food</h2>
-        <div class="dish">
-          <img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=900&q=80" alt="Punjabi food platter" />
-          <div>
+        <article class="food-card" id="punjabi">
+          <h3>Punjabi Food</h3>
+          <div class="food-card-inner">
+            <img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=900&q=80" alt="Punjabi food" />
             <p>
-              Punjabi cuisine is known for its hearty and flavorful dishes, often made with rich sauces, butter, and aromatic spices. It includes classic dishes like dal makhani, paneer tikka, butter chicken, and tandoori breads. The cuisine is loved for its indulgent taste and generous portions.
+              Punjabi cuisine is famous for hearty, flavorful dishes such as butter chicken, chole bhature, and naan. It uses rich spices, dairy, and tandoor-cooked breads, resulting in vibrant, satisfying meals that are loved all over the world.
             </p>
           </div>
-        </div>
-      </section>
+        </article>
 
-      <section id="south-indian">
-        <h2>South Indian Cuisine</h2>
-        <div class="dish">
-          <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=900&q=80" alt="South Indian food" />
-          <div>
+        <article class="food-card" id="south-indian">
+          <h3>South Indian Cuisine</h3>
+          <div class="food-card-inner">
+            <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=900&q=80" alt="South Indian food" />
             <p>
-              South Indian cuisine includes dishes such as dosa, idli, sambar, and coconut-based curries. It is known for its use of rice, lentils, and fresh ingredients, with many dishes being light, nutritious, and flavorful. The cuisine is celebrated for its balance of taste, texture, and health benefits.
+              South Indian cuisine includes idli, dosa, sambar, and coconut-based dishes that are light, healthy, and vibrant in flavor. It emphasizes rice, lentils, spices, and fresh ingredients, creating simple yet deeply satisfying meals.
             </p>
           </div>
-        </div>
-      </section>
-    </main>
+        </article>
+      </main>
 
-    <footer>
-      <p>Author: Food Blog Writer &nbsp;|&nbsp; Date: October 9, 2026</p>
-    </footer>
+      <aside class="right-col" aria-label="Popular Foods list">
+        <h4>Popular Foods</h4>
+
+        <div class="group">
+          <h5>North Indian</h5>
+          <ul>
+            <li>Chole Bhature</li>
+            <li>Samosa</li>
+            <li>Jalebi</li>
+            <li>Dahi Bhalla</li>
+          </ul>
+        </div>
+
+        <div class="group">
+          <h5>South Indian</h5>
+          <ul>
+            <li>Idli</li>
+            <li>Masala Dosa</li>
+            <li>Pongal</li>
+            <li>Bisi Bele Bath</li>
+          </ul>
+        </div>
+
+        <div class="group">
+          <h5>Mughlai</h5>
+          <ul>
+            <li>Chicken Biryani</li>
+            <li>Butter Chicken</li>
+            <li>Rogan Josh</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
   </div>
 </body>
 </html>
