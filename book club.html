@@ -18,13 +18,13 @@
 
 </head>
 
-<body>
+<body style="background-color: rgb(221, 10, 10);display: flex; flex-direction: column; min-height: 100vh;display:grid;grid-template-columns:3fr 1fr;">
 
 <header style="background-color: rgb(10, 221, 137); border: 3px solid rgb(0, 0, 0); font-family: Georgia, 'Times New Roman', Times, serif;font-size:12px;
-display: flex; align-items: center; justify-content: space-between; padding: 10px;"> 
+display: flex; align-items: center; justify-content: space-between;grid-column:1; grid-row:1; padding: 10px;"> 
 
     <h1 style="background-color: rgb(10, 221, 137);">Mount Caramel Book Club</h1>
-    <nav>
+    <nav grid-column:1 grid-row:2>
  <img src="./img.jpg" alt="Book Club" width="400" height="300">
 <ul style="color:brown">
     <li><a href="book club.html">Home</a></li>
@@ -36,7 +36,7 @@ display: flex; align-items: center; justify-content: space-between; padding: 10p
   </nav>
 </header>
 
-<div style="background-color: rgb(10, 42, 221); font-family: Georgia, 'Times New Roman', Times, serif;font-size:12px;">
+<div style="background-color: rgb(10, 42, 221); font-family: Georgia, 'Times New Roman', Times, serif;font-size:12px;grid-column:2;grid-row:1/3; padding: 10px;border: 3px solid rgb(0, 0, 0);">
 <h2 style="background-color: rgb(10, 221, 63); font-family: Georgia, 'Times New Roman', Times, serif;font-size:12px;">Welcome to Mount caramel book club</h2>
 <p>The Mount caramel book club is an online community for the book readers of mount caramel school.</p>
 </div>
@@ -46,7 +46,7 @@ display: flex; align-items: center; justify-content: space-between; padding: 10p
 <div style="background-color: rgb(10, 161, 221); font-family: Georgia, 'Times New Roman', Times, serif;font-size:12px;">
 <h2 style="background-color: rgb(10, 119, 221); font-family: Georgia, 'Times New Roman', Times, serif;font-size:12px;">Meet our teachers</h2>
 
-<div id="teachers">
+<div id="teachers"grid-column:1;grid-row:3;display: flex; justify-content: space-around;">
 <h2>Meet our teachers</h2>
 <div style="display: flex; justify-content: space-around;">
 <div>
@@ -70,7 +70,7 @@ display: flex; align-items: center; justify-content: space-between; padding: 10p
 </div>
 
 
-<div style="background-color: rgb(221, 10, 126); font-family: Georgia, 'Times New Roman', Times, serif;font-size:12px;"id="book-reviews">
+<div style="grid-column:2;grid-row:3;background-color: rgb(221, 10, 126); font-family: Georgia, 'Times New Roman', Times, serif;font-size:12px;"id="book-reviews">
 </div>
     <h2 style="border: 3px solid rgb(0, 0, 0);">Book Review</h2>
 <div style="display: flex; justify-content: space-around;">
